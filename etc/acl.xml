@@ -11,7 +11,7 @@
                 <resource id="Magento_Catalog::catalog">
                     <resource id="Kuzman_ProductFaq::product_faq" title="Product FAQ" sortOrder="10" >
                         <resource id="Kuzman_ProductFaq::manage_questions" title="Manage Questions" sortOrder="40">
-                            <resource id="Kuzman_ProductFaq:::save" title="Save Question" sortOrder="10" />
+                            <resource id="Kuzman_ProductFaq::save" title="Save Question" sortOrder="10" />
                             <resource id="Kuzman_ProductFaq::delete" title="Delete Question" sortOrder="20" />
                         </resource>
                         <resource id="Kuzman_ProductFaq::configuration" title="Configuration" sortOrder="3" />
@@ -21,7 +21,7 @@
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
                             <resource id="Magento_Catalog::config_catalog">
-                                <resource id="Kuzman_ProductFaq:system_config" title="FAQ Configuration" sortOrder="20" />
+                                <resource id="Kuzman_ProductFaq::kuzman_productfaq" title="FAQ Configuration" sortOrder="20" />
                             </resource>
                         </resource>
                     </resource>

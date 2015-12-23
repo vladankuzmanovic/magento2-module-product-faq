@@ -10,7 +10,7 @@
             <class>separator-top</class>
             <label>Product FAQ</label>
             <tab>catalog</tab>
-            <resource>Kuzman_ProductFaq:system_config</resource>
+            <resource>Kuzman_ProductFaq::kuzman_productfaq</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General Settings</label>
                 <field id="enable_in_frontend" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
