@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author  Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kuzman_ProductFaq::product_faq" title="Product FAQ" module="Kuzman_ProductFaq" sortOrder="100" parent="Magento_Catalog::catalog" resource="Kuzman_ProductFaq::product_faq" />
+        <add id="Kuzman_ProductFaq::manage_questions" title="Manage Questions"
+             module="Kuzman_ProductFaq" sortOrder="10" parent="Kuzman_ProductFaq::product_faq"
+             action="productfaq/question/index" resource="Kuzman_ProductFaq::manage_questions" />
+        <add id="Kuzman_ProductFaq::configuration" title="Configuration"
+             module="Kuzman_ProductFaq" sortOrder="20" parent="Kuzman_ProductFaq::product_faq"
+             action="adminhtml/system_config/edit/section/productfaq"
+             resource="Kuzman_ProductFaq::configuration" />
+    </menu>
+</config>

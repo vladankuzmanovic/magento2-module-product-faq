@@ -1,0 +1,52 @@
+<?php
+/**
+ * @author  Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+?>
+<div class="block question-add">
+    <div class="block-content">
+        <form action="<?php /* @escapeNotVerified */ echo $block->getPostUrl() ?>" class="question-form" method="post" id="question-form" data-role="product-question-form" data-bind="scope: 'question-form'" style="max-width: 500px">
+
+            <?php echo $block->getBlockHtml('formkey'); ?>
+            <?php echo $block->getChildHtml('form_fields_before')?>
+            <fieldset data-hasrequired="" class="fieldset question-fieldset">
+                <legend class="legend question-legend"><span><?php /* @escapeNotVerified */ echo __("You're asking about:"); ?></span><strong><?php echo $block->escapeHtml($block->getProductInfo()->getName()) ?></strong></legend><br />
+                <span id="input-message-box"></span>
+                <div class="field question-field-nickname required">
+                    <label class="label" for="nickname_field"><span><?php /* @escapeNotVerified */ echo __('Nickname') ?></span></label>
+                    <div class="control">
+                        <input type="text" data-bind="value: nickname()" data-validate="{required:true}" class="input-text" id="nickname_field" name="nickname" aria-required="true">
+                    </div>
+                </div>
+                <div class="field question-field-email required">
+                    <label class="label" for="summary_field"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+                    <div class="control">
+                        <input type="text" data-bind="value: email()" data-validate="{required:true, 'validate-email':true }" class="input-text" id="email_field" name="email" aria-required="true">
+                    </div>
+                </div>
+
+                <div class="field question-field-text required">
+                    <label class="label" for="question_field"><span><?php /* @escapeNotVerified */ echo __('Question') ?></span></label>
+                    <div class="control">
+                        <textarea data-bind="value: question()" data-validate="{required:true}" rows="3" cols="5" id="question_field" name="question" aria-required="true"></textarea>
+                    </div>
+                </div>
+                <input type="hidden" id="product_id_field" name="product_id" aria-required="true" value  = " <?php echo $block->escapeHtml($block->getProductInfo()->getId())?>" >
+            </fieldset>
+            <div class="actions-toolbar question-form-actions">
+                <div class="primary actions-primary">
+                    <button class="action submit primary" type="submit"><span><?php /* @escapeNotVerified */ echo __('Submit Question'); ?></span></button>
+                </div>
+            </div>
+        </form>
+        <script type="text/x-magento-init">
+{
+    "#question-form": {
+        "Kuzman_ProductFaq/js/error-placement": {}
+    }
+}
+</script>
+    </div>
+</div>
+
+

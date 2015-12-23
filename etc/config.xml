@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author  Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <productfaq>
+            <general>
+                <enable_in_frontend>0</enable_in_frontend>
+            </general>
+        </productfaq>
+    </default>
+</config>

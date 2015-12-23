@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author	    Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="Kuzman\ProductFaq\Block\Question" name="question.tab" as="questions" template="Kuzman_ProductFaq::questions.phtml" group="detailed_info" ifconfig="productfaq/general/enable_in_frontend">
+                <block class="Kuzman\ProductFaq\Block\Form" name="product.faq.form" as="question_form" template="Kuzman_ProductFaq::form.phtml"/>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

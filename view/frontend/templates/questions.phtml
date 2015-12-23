@@ -1,0 +1,21 @@
+<?php
+/**
+ * @author  Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+?>
+
+<div id="product-questions-container">
+    <?php $questionCollection = $block->getQuestionCollection();?>
+        <h1><?php /* @escapeNotVerified */ echo __('Frequently asked questions') ?> </h1>
+    <?php if($questionCollection->getSize() ):?>
+        <?php foreach($questionCollection as $q): ?>
+            <?php if ($q->getAnswer() && $q->getAnswer()!=''):?>
+            <h3><?php echo $q->getNickname();?> asked:</h3>
+            <div><strong><?php /* @escapeNotVerified */ echo __('Q:')?> </strong><?php echo $q->getQuestion();?></div>
+            <div><strong><?php /* @escapeNotVerified */ echo __('A:')?> </strong><?php echo $q->getAnswer(); ?></div>
+            <hr/>
+            <?php endif; ?>
+       <?php endforeach; ?>
+   <?php endif ;?>
+</div>
+<?php echo $block->getChildHtml('question_form'); ?>
