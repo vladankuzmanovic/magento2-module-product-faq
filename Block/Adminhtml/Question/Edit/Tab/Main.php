@@ -101,7 +101,8 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'name' => 'product_id',
                 'label' => __('Product Id'),
                 'title' => __('Product Id'),
-                'class' =>'validate-number']
+                'class' =>'validate-number',
+				'note' => __('Comma separated Product Ids'),]]
         );
 
         $fieldset->addField(
