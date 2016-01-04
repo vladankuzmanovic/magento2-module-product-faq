@@ -16,8 +16,8 @@ Configuration
 Administration
 ------------------------
 
- PRODUCTS > Product FAQ > Manage Questions
- PRODUCTS > Catalog > Product > ADVANCED SETTINGS > FAQ (tab)
+ PRODUCTS > Product FAQ > Manage Questions  
+ PRODUCTS > Catalog > Product > ADVANCED SETTINGS > FAQ (tab)  
 
 
 Installation
