@@ -38,4 +38,14 @@ class Status implements \Magento\Framework\Data\OptionSourceInterface
         }
         return $options;
     }
+
+     /**
+     * Retrieve option array
+     *
+     * @return string[]
+     */
+    public function getOptionArray()
+    {
+        return $this->question->getAvailableStatuses();
+    }
 }

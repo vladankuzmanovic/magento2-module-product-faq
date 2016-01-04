@@ -81,6 +81,7 @@ class Collection extends AbstractCollection
             )
             ->where('product_id = ?', $productId)
             ->where('answer != ?', '')
+            ->where('status = ?', 1)
             ->order('position','asc');
         $result = $connection->fetchAll($select);
 

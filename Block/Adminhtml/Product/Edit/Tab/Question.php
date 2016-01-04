@@ -29,11 +29,17 @@ class Question extends \Magento\Backend\Block\Widget\Grid\Extended
     protected $questionIdsColFactory;
 
     /**
+     * @var \Kuzman\ProductFaq\Model\Question\Source\Status
+     */
+    protected $_status;
+
+    /**
      * @param \Magento\Backend\Block\Template\Context $context
      * @param \Magento\Backend\Helper\Data $backendHelper
      * @param \Magento\Framework\Registry $coreRegistry
      * @param \Kuzman\ProductFaq\Model\ResourceModel\Question\CollectionFactory $collectionFactory
      * @param \Kuzman\ProductFaq\Model\ResourceModel\QuestionId\CollectionFactory $collectionIdFactory
+     * @param \Kuzman\ProductFaq\Model\Question\Source\Status $status
      * @param array $data
      */
     public function __construct(
@@ -42,11 +48,13 @@ class Question extends \Magento\Backend\Block\Widget\Grid\Extended
         \Magento\Framework\Registry $coreRegistry,
         \Kuzman\ProductFaq\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
         \Kuzman\ProductFaq\Model\ResourceModel\QuestionId\CollectionFactory $collectionIdFactory,
+        \Kuzman\ProductFaq\Model\Question\Source\Status $status,
         array $data = []
     ) {
         $this->_coreRegistry = $coreRegistry;
         $this->questionColFactory = $collectionFactory;
         $this->questionIdsColFactory = $collectionIdFactory;
+        $this->_status = $status;
         parent::__construct($context, $backendHelper, $data);
     }
 
@@ -233,8 +241,10 @@ class Question extends \Magento\Backend\Block\Widget\Grid\Extended
             [
                 'header' => __('Status'),
                 'index' => 'status',
-                'header_css_class' => 'col-name',
-                'column_css_class' => 'col-name'
+                'type' => 'options',
+                'options' => $this->_status->getOptionArray(),
+                'header_css_class' => 'col-status',
+                'column_css_class' => 'col-status'
             ]
         );
         $this->addColumn(
