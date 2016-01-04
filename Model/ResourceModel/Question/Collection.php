@@ -80,6 +80,7 @@ class Collection extends AbstractCollection
                 '*'
             )
             ->where('product_id = ?', $productId)
+            ->where('answer != ?', '')
             ->order('position','asc');
         $result = $connection->fetchAll($select);
 
