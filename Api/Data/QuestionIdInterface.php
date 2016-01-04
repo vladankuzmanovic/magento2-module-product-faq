@@ -12,6 +12,7 @@ interface QuestionIdInterface
     const ID            = 'id';
     const QUESTION_ID   = 'question_id';
     const PRODUCT_ID    = 'product_id';
+    const POSITION    = 'position';
 
     /**
      * Get id
@@ -33,6 +34,13 @@ interface QuestionIdInterface
      * @return int|null
      */
     public function getProductId();
+
+    /**
+     * Get Position
+     *
+     * @return int|null
+     */
+    public function getPosition();
 
     /**
      * Set ID
@@ -57,4 +65,12 @@ interface QuestionIdInterface
      * @return \Kuzman\ProductFaq\Api\Data\QuestionIdInterface
      */
     public function setProductId($productId);
+
+    /**
+     * Set Position
+     *
+     * @param int $position
+     * @return \Kuzman\ProductFaq\Api\Data\QuestionIdInterface
+     */
+    public function setPosition($position);
 }

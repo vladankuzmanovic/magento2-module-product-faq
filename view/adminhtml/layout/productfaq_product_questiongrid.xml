@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author  Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Kuzman\ProductFaq\Block\Adminhtml\Product\Edit\Tab\Question" name="catalog.product.edit.tab.faq"/>
+    </container>
+</layout>

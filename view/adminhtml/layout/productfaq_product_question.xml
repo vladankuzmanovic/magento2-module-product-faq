@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author  Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <container name="root" label="Root">
+        <block class="Kuzman\ProductFaq\Block\Adminhtml\Product\Edit\Tab\Question" name="catalog.product.edit.tab.faq"/>
+        <block class="Magento\Backend\Block\Widget\Grid\Serializer" name="upsell_grid_serializer">
+            <arguments>
+                <argument name="input_names" xsi:type="string">position</argument>
+                <argument name="grid_block" xsi:type="string">catalog.product.edit.tab.faq</argument>
+                <argument name="callback" xsi:type="string">getSelectedProductQuestion</argument>
+                <argument name="input_element_name" xsi:type="string">links[question]</argument>
+                <argument name="reload_param_name" xsi:type="string">product_question</argument>
+            </arguments>
+        </block>
+    </container>
+</layout>

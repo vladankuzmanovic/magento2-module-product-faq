@@ -102,7 +102,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'label' => __('Product Id'),
                 'title' => __('Product Id'),
 				'note' => __('Comma separated Product Ids')
-			]
+            ]
         );
 
         $fieldset->addField(
@@ -115,16 +115,6 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'required' => true,
                 'options' => ['1' => __('Enabled'), '0' => __('Disabled')]
             ]
-        );
-
-        $fieldset->addField(
-            'sort_order',
-            'text',
-            [
-                'name' => 'sort_order',
-                'label' => __('Sort Order'),
-                'title' => __('Sort Order'),
-                'class' =>'validate-number']
         );
 
         $this->_eventManager->dispatch('adminhtml_cproductfaq_question_edit_tab_main_prepare_form', ['form' => $form]);

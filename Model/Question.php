@@ -132,16 +132,6 @@ class Question extends \Magento\Framework\Model\AbstractModel implements Questio
     }
 
     /**
-     * Get Sort Order
-     *
-     * @return string|null
-     */
-    public function getSortOrder()
-    {
-        return $this->getData(self::SORT_ORDER);
-    }
-
-    /**
      * Set Question Id
      *
      * @param int $id
@@ -216,16 +206,5 @@ class Question extends \Magento\Framework\Model\AbstractModel implements Questio
     public function setStatus($status)
     {
         return $this->setData(self::STATUS, $status);
-    }
-
-    /**
-     * Set Sort Order
-     *
-     * @param int $sortOrder
-     * @return \Kuzman\ProductFaq\Api\Data\QuestionInterface
-     */
-    public function setSortOrder($sortOrder)
-    {
-        return $this->setData(self::SORT_ORDER, $sortOrder);
     }
 }

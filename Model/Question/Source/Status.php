@@ -3,6 +3,7 @@
  * @author	    Vladan Kuzmanovic (vladankuzmanovic@gmail.com)
  */
 namespace Kuzman\ProductFaq\Model\Question\Source;
+
 class Status implements \Magento\Framework\Data\OptionSourceInterface
 {
     /**

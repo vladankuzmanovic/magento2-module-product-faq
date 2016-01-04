@@ -55,6 +55,7 @@ class QuestionId extends \Magento\Framework\Model\AbstractModel implements Quest
     {
         return $this->getData(self::ID);
     }
+
     /**
      * Get Question ID
      *
@@ -68,11 +69,21 @@ class QuestionId extends \Magento\Framework\Model\AbstractModel implements Quest
     /**
      * Get Product Id
      *
-     * @return string|null
+     * @return int|null
      */
     public function getProductId()
     {
         return $this->getData(self::PRODUCT_ID);
+    }
+
+    /**
+     * Get Position
+     *
+     * @return string|null
+     */
+    public function getPosition()
+    {
+        return $this->getData(self::POSITION);
     }
 
     /**
@@ -85,6 +96,7 @@ class QuestionId extends \Magento\Framework\Model\AbstractModel implements Quest
     {
         return $this->setData(self::ID, $id);
     }
+
     /**
      * Set Question Id
      *
@@ -106,4 +118,16 @@ class QuestionId extends \Magento\Framework\Model\AbstractModel implements Quest
     {
         return $this->setData(self::PRODUCT_ID, $productId);
     }
+    
+    /**
+     * Set Position
+     *
+     * @param int $position
+     * @return \Kuzman\ProductFaq\Api\Data\QuestionIdInterface
+     */
+    public function setPosition($position)
+    {
+        return $this->setData(self::POSITION, $position);
+    }
+
 }

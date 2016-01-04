@@ -15,7 +15,6 @@ interface QuestionInterface
     const QUESTION      = 'question';
     const ANSWER        = 'answer';
     const STATUS        = 'status';
-    const SORT_ORDER    = 'sort_order';
 
     /**
      * Get question id
@@ -59,13 +58,6 @@ interface QuestionInterface
      * @return int|null
      */
     public function getStatus();
-
-    /**
-     * Get Sort Order
-     *
-     * @return int|null
-     */
-    public function getSortOrder();
 
     /**
      * Set Question ID
@@ -114,12 +106,4 @@ interface QuestionInterface
      * @return \Kuzman\ProductFaq\Api\Data\QuestionInterface
      */
     public function setStatus($status);
-
-    /**
-     * Set SortOrder
-     *
-     * @param int $sortOrder
-     * @return \Kuzman\ProductFaq\Api\Data\QuestionInterface
-     */
-    public function setSortOrder($sortOrder);
 }

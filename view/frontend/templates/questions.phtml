@@ -5,14 +5,14 @@
 ?>
 
 <div id="product-questions-container">
-    <?php $questionCollection = $block->getQuestionCollection();?>
+    <?php  $questionCollection = $block->getQuestionCollection(); ?>
         <h1><?php /* @escapeNotVerified */ echo __('Frequently asked questions') ?> </h1>
-    <?php if($questionCollection->getSize() ):?>
+    <?php if(!empty($questionCollection)):?>
         <?php foreach($questionCollection as $q): ?>
-            <?php if ($q->getAnswer() && $q->getAnswer()!=''):?>
-            <h3><?php echo $q->getNickname();?> asked:</h3>
-            <div><strong><?php /* @escapeNotVerified */ echo __('Q:')?> </strong><?php echo $q->getQuestion();?></div>
-            <div><strong><?php /* @escapeNotVerified */ echo __('A:')?> </strong><?php echo $q->getAnswer(); ?></div>
+            <?php if ($q['answer'] && $q['answer'] != ''):?>
+            <h3><?php echo $q['nickname'];?> asked:</h3>
+            <div><strong><?php /* @escapeNotVerified */ echo __('Q:')?> </strong><?php echo $q['question'];?></div>
+            <div><strong><?php /* @escapeNotVerified */ echo __('A:')?> </strong><?php echo $q['answer']; ?></div>
             <hr/>
             <?php endif; ?>
        <?php endforeach; ?>

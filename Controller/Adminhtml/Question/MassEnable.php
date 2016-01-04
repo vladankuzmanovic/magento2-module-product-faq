@@ -9,9 +9,6 @@ use Magento\Backend\App\Action\Context;
 use Magento\Ui\Component\MassAction\Filter;
 use Kuzman\ProductFaq\Model\ResourceModel\Question\CollectionFactory;
 
-/**
- * Class MassEnable
- */
 class MassEnable extends \Magento\Backend\App\Action
 {
     /**

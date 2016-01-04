@@ -15,6 +15,7 @@ use Magento\Framework\View\Element\Template;
 class Question extends Template implements IdentityInterface
 {
     const SORT_ORDER_ASC = 'ASC';
+    
     /**
      * Core registry
      *
@@ -30,13 +31,6 @@ class Question extends Template implements IdentityInterface
     protected $questionColFactory;
 
     /**
-     * Review resource model
-     *
-     * @var \Kuzman\ProductFaq\Model\ResourceModel\QuestionId\CollectionFactory
-     */
-    protected $questionIdsColFactory;
-
-    /**
      * @var \Kuzman\ProductFaq\Helper\Data
      */
     protected $helper;
@@ -45,7 +39,6 @@ class Question extends Template implements IdentityInterface
      * @param Template\Context $context
      * @param \Magento\Framework\Registry $registry
      * @param \Kuzman\ProductFaq\Model\ResourceModel\Question\CollectionFactory $collectionFactory
-     * @param \Kuzman\ProductFaq\Model\ResourceModel\QuestionId\CollectionFactory $collectionIdFactory
      * @param \Kuzman\ProductFaq\Helper\Data $helper
      * @param array $data
      */
@@ -53,13 +46,11 @@ class Question extends Template implements IdentityInterface
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Kuzman\ProductFaq\Model\ResourceModel\Question\CollectionFactory $collectionFactory,
-        \Kuzman\ProductFaq\Model\ResourceModel\QuestionId\CollectionFactory $collectionIdFactory,
         \Kuzman\ProductFaq\Helper\Data $helper,
         array $data = []
     ) {
         $this->_coreRegistry = $registry;
         $this->questionColFactory = $collectionFactory;
-        $this->questionIdsColFactory = $collectionIdFactory;
         $this->helper = $helper;
         parent::__construct($context, $data);
 
@@ -101,35 +92,18 @@ class Question extends Template implements IdentityInterface
     }
 
     /**
-     * @return mixed
+     * Joined collection
+     * @return array
      */
     public function getQuestionCollection()
     {
         if ($this->isEnabled()) {
-            $idsCollection = $this->questionIdsColFactory->create();
-            $idsCollection->addFieldToFilter('product_id', $this->getProductId());
-            $questionIds = array();
-            foreach ($idsCollection as $question) {
-                $questionIds[] = $question->getQuestionId();
-            }
 
-            $collection = $this->questionColFactory->create()
-                ->addFieldToFilter('question_id', ['in' => $questionIds])
-                ->addFieldToFilter('status', true)
-                ->setOrder('sort_order', self::SORT_ORDER_ASC);
-            return $collection;
+            $collection = $this->questionColFactory->create();
+            $questionCollection = $collection->joinedCollection($this->getProductId());
+            return $questionCollection;
         }
     }
-
-    /**
-     * Gets size of filtered collection
-     * @return mixed
-     */
-    protected function getCollectionSize()
-    {
-        return $this->getQuestionCollection()->getSize();
-    }
-
     /**
      * Show on frontend
      *

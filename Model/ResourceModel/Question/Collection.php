@@ -13,6 +13,7 @@ class Collection extends AbstractCollection
      */
 
     protected $_idFieldName = 'question_id';
+    
     /**
      * Define model & resource model
      */
@@ -64,5 +65,24 @@ class Collection extends AbstractCollection
                 }
             }
         }
+    }
+
+    /**
+     * Returns Joined collection of 'kuzman_product_faq' and 'kuzman_product_faq_id'
+     * @param $productId
+     * @return array
+     */
+    public function joinedCollection($productId){
+
+        $connection = $this->getConnection();
+        $select = $connection->select()->from(['v' => $this->getTable('kuzman_product_faq')])
+            ->joinInner(['r' => $this->getTable('kuzman_product_faq_id')], 'v.question_id=r.question_id',
+                '*'
+            )
+            ->where('product_id = ?', $productId)
+            ->order('position','asc');
+        $result = $connection->fetchAll($select);
+
+        return $result;
     }
 }

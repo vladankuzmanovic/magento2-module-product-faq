@@ -75,14 +75,6 @@ class InstallSchema implements InstallSchemaInterface
                     ['nullable' => false, 'default' => false],
                     'Status'
                 )
-                ->addColumn(
-                    'sort_order',
-                    Table::TYPE_INTEGER,
-                    null,
-                    ['nullable' => false],
-                    'Sort Order'
-                )
-
                 ->setComment('Product Faq')
                 ->setOption('type', 'InnoDB')
                 ->setOption('charset', 'utf8');
@@ -131,6 +123,13 @@ class InstallSchema implements InstallSchemaInterface
                     null,
                     ['unsigned' => true, 'nullable' => false, 'default' => '0'],
                     'Product Id'
+                )
+                ->addColumn(
+                    'position',
+                    Table::TYPE_INTEGER,
+                    null,
+                    ['nullable' => false],
+                    'Sort Order'
                 )
                 ->addIndex($installer->getIdxName('kuzman_product_faq_id', ['question_id']), ['question_id'])
                 ->addForeignKey(
