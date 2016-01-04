@@ -7,8 +7,8 @@ If they don’t see what they are looking for, they can submit a question via a 
 Configuration
 ------------------------
  
- PRODUCTS > Product FAQ > Configuration 
- STORES > Configuration > CATALOG > Product FAQ
+ PRODUCTS > Product FAQ > Configuration  
+ STORES > Configuration > CATALOG > Product FAQ  
  
         Enable - Yes/No
       
@@ -16,8 +16,8 @@ Configuration
 Administration
 ------------------------
 
- PRODUCTS > Product FAQ > Manage Questions
- PRODUCTS > Catalog > Product > ADVANCED SETTINGS > FAQ (tab)
+ PRODUCTS > Product FAQ > Manage Questions  
+ PRODUCTS > Catalog > Product > ADVANCED SETTINGS > FAQ (tab)  
 
 
 Installation
