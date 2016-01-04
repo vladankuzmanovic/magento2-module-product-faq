@@ -104,6 +104,16 @@ class Question extends Template implements IdentityInterface
             return $questionCollection;
         }
     }
+
+    /**
+     * return size of collection
+     * @return int
+     */
+    protected function getCollectionSize()
+    {
+        return count($this->getQuestionCollection());
+    }
+
     /**
      * Show on frontend
      *
