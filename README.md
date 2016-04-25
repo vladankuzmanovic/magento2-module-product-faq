@@ -29,7 +29,7 @@ Enter following commands to install module:
 cd MAGE2_ROOT_DIR
 # install
 composer config repositories.kuzman_productfaq git https://github.com/vladankuzmanovic/ProductFaq.git
-composer require kuzman/productfaq-m2:dev-master
+composer require kuzman/productfaq:dev-master
 # enable
 php bin/magento module:enable Kuzman_ProductFaq --clear-static-content
 php bin/magento setup:upgrade
