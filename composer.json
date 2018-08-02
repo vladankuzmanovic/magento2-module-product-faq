@@ -1,22 +1,19 @@
 {
-  "name": "kuzman/productfaq",
+  "name": "kuzman/module-product-faq",
   "description": "Magento2 extension - Frequently asked questions",
   "type": "magento2-module",
   "version": "1.0.0",
   "license": [
-    "OSL-3.0"
+    "OSL-3.0",
+    "AFL-3.0"
   ],
   "require": {
-    "php": "~5.5.0|~5.6.0|~7.0.0",
-    "magento/magento-composer-installer": "*",
-    "magento/module-catalog": "*"
+    "php": "7.0.2|7.0.4|~7.0.6|~7.1.0"
   },
-  "extra": {
-    "map": [
-      [
-        "*",
-        "Kuzman/ProductFaq"
-      ]
-    ]
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Kuzman\\ProductFaq\\": ""
+    }
   }
 }
